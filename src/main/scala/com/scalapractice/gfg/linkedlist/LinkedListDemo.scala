@@ -17,26 +17,32 @@ object LinkedListDemo {
     one.next = two
     two.next = three
     three.next = four
-    four.next = five
 
     traverse(one)
     addInLast(one,5)
-    println("After adding 5 at last")
+    println("\n After adding 5 at last")
     traverse(one)
 
-    println("After adding 6 at beginning")
-    val newHead = addInBeginning(one,6)
+    println("\n After adding 10 at beginning")
+    val newHead = addInBeginning(one,10)
     traverse(newHead)
 
-    searchNode(one,3)
-    searchNodeRec(one,10)
+    searchNode(newHead,3)
+    println("search node[value = 10]  using recursive way ")
+    searchNodeRec(newHead,10)
+
+    findLength(newHead)
+    findLengthRec(newHead,0)
   }
 
   def traverse(head:Node): Unit = {
     var temp = head
     while(temp != null)
       {
-        print(s" ${temp.data} ")
+         if(temp.next == null)
+           print(s" ${temp.data} ")
+         else
+           print(s" ${temp.data} -> ")
         temp = temp.next
       }
   }
@@ -62,7 +68,7 @@ object LinkedListDemo {
    search integer in list
    */
   def searchNode(head: Node, value: Int): Unit = {
-    println(s"\n Searching by integer ")
+    println(s"\n Search in linkedList by integer ${value}")
 
     var temp = head
     var flag = false
@@ -89,12 +95,38 @@ object LinkedListDemo {
   @tailrec
   def searchNodeRec(head: Node, value: Int): Unit = {
     if (head == null) {
-      println("Not Found")
+      println(s"Not Found  ${value}")
     }
     else if (head.data == value) {
       println(s"Found  ${value}")
     }
     else
       searchNodeRec(head.next, value)
+  }
+
+  /*
+    Finding linkedlist length : iterative method
+   */
+  def findLength(head:Node) : Unit = {
+      var length = 0
+      var temp = head
+      while(temp != null)
+        {
+          length +=1
+          temp = temp.next
+        }
+    println(s" Size of linkedlist ${length}")
+  }
+
+    /*
+      Finding linkedlist length : recursive approach
+     */
+
+  @tailrec
+  def findLengthRec(head: Node,acc:Int): Unit = {
+     if(head != null)
+       findLengthRec(head.next,acc+1)
+     else
+    println(s" Size of linkedlist using recursion : ${acc}")
   }
 }
