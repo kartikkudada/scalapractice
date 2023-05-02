@@ -33,6 +33,10 @@ object LinkedListDemo {
 
     findLength(newHead)
     findLengthRec(newHead,0)
+
+   val firstNodeAfterReverse = reverse(newHead)
+   println(s" fist node after reverse ${firstNodeAfterReverse.data}")
+    traverse(firstNodeAfterReverse)
   }
 
   def traverse(head:Node): Unit = {
@@ -129,4 +133,26 @@ object LinkedListDemo {
      else
     println(s" Size of linkedlist using recursion : ${acc}")
   }
+
+  /*
+    Reverse linked list
+   */
+  def reverse(head:Node) : Node = {
+      var pre:Node = null
+      var temp = head
+      var nextNode:Node = null
+
+     while(temp != null)
+       {
+         nextNode = temp.next
+         temp.next = pre
+
+         pre = temp
+         temp = nextNode
+         //temp = temp.next
+       }
+
+    pre
+  }
+
 }
