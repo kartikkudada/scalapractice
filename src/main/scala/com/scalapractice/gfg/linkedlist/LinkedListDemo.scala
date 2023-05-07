@@ -151,8 +151,9 @@ object LinkedListDemo {
          temp = nextNode
          //temp = temp.next
        }
-
     pre
   }
+
+
 
 }
