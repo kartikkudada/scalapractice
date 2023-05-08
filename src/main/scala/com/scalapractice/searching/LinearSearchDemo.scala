@@ -1,4 +1,7 @@
 package com.scalapractice.searching
+
+import scala.annotation.tailrec
+
 /*
 Linear Search Algorithm
  */
@@ -10,6 +13,8 @@ object LinearSearchDemo {
     println( s" searching 20 in array :  ${linearSearch1(array,20)}")
 
     println( s" searching 4 in array, Found in position:  ${linearSearch2(array,4)}")
+
+    println( s" searching 70 in array recursive way, Found in position:  ${linearSearchrecussive(array,0,4)}")
   }
 
   def linearSearch1(input:Array[Int],data:Int):Boolean = {
@@ -25,5 +30,18 @@ object LinearSearchDemo {
         }
       }
        -1
+  }
+
+  @tailrec
+  def linearSearchrecussive(input:Array[Int],index:Int,data:Int) :Int = {
+
+    if(index == input.length-1 && input(index) != data)
+      -1
+    else if( input(index) == data ){
+      index
+    }
+    else {
+        linearSearchrecussive(input,index+1,data)
+     }
   }
 }
