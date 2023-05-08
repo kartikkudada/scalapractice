@@ -9,24 +9,20 @@ Given a Linked List and a number N, write a function that
 object NthNodeFromEnd {
 
   def main(args: Array[String]): Unit = {
-    val one = new Node(1, null)
-    val two = new Node(2, null)
-    val three = new Node(3, null)
-    val four = new Node(4, null)
-    val five = new Node(5, null)
+    val list = new LinkedList
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    list.push(4)
+    list.push(5)
 
-    one.next = two
-    two.next = three
-    three.next = four
-    four.next = five
+    LinkedListDemo.traverse(list.head)
 
-    LinkedListDemo.traverse(one)
-    findNthNodeFromEnd(one,2)
+    findNthNodeFromEnd(list.head,2)
   }
 
   def findNthNodeFromEnd(head:Node,n:Int) : Unit = {
     var temp = head
-    var fast = temp
     var slow:Node = null
     var index = 0
     while(temp != null)
