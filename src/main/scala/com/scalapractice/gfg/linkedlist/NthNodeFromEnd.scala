@@ -9,11 +9,11 @@ Given a Linked List and a number N, write a function that
 object NthNodeFromEnd {
 
   def main(args: Array[String]): Unit = {
-    val one = Node(1, null)
-    val two = Node(2, null)
-    val three = Node(3, null)
-    val four = Node(4, null)
-    val five = Node(5, null)
+    val one = new Node(1, null)
+    val two = new Node(2, null)
+    val three = new Node(3, null)
+    val four = new Node(4, null)
+    val five = new Node(5, null)
 
     one.next = two
     two.next = three

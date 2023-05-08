@@ -8,24 +8,21 @@ import scala.util.control.Breaks.break
 object LinkedListDemo {
 
   def main(args: Array[String]): Unit = {
-    val one = Node(1,null)
-    val two = Node(2,null)
-    val three = Node(3,null)
-    val four = Node(4,null)
-    val five = Node(5,null)
+    val list = new LinkedList
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    list.push(4)
+    list.push(5)
 
-    one.next = two
-    two.next = three
-    three.next = four
 
-    traverse(one)
-    addInLast(one,5)
-    println("\n After adding 5 at last")
-    traverse(one)
-
+    traverse(list.head)
     println("\n After adding 10 at beginning")
-    val newHead = addInBeginning(one,10)
+    val newHead = list.addInBeginning(10)
     traverse(newHead)
+    list.pop()
+    println("\n After poping one element")
+    traverse(list.head)
 
     searchNode(newHead,3)
     println("search node[value = 10]  using recursive way ")
@@ -51,22 +48,18 @@ object LinkedListDemo {
       }
   }
 
-  def addInLast(head:Node,value:Int):Unit = {
+/*  def addInLast(head:Node,value:Int):Unit = {
     var temp = head
     while(temp.next != null)
       {
         temp = temp.next
       }
-      val newNode = Node(value,null)
+      val newNode = new Node(value,null)
 
     temp.next = newNode
-  }
+  }*/
 
-  def addInBeginning(head:Node,value:Int) : Node = {
-      val newNode = Node(value,null)
-      newNode.next = head
-     newNode
-  }
+
 
   /*
    search integer in list

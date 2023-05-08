@@ -13,11 +13,11 @@ For example, the output is 5 for the below list.
 object LengthOfCircularLinkedList {
 
   def main(args: Array[String]): Unit = {
-    val A = Node(1, null)
-    val B = Node(2, null)
-    val C = Node(3, null)
-    val D = Node(4, null)
-    val E = Node(5, null)
+    val A = new Node(1, null)
+    val B = new Node(2, null)
+    val C = new Node(3, null)
+    val D = new Node(4, null)
+    val E = new Node(5, null)
 
     A.next = B
     B.next = C
