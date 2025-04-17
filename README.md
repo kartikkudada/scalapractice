@@ -2,5 +2,5 @@
 
 ## This is for scala practice from different sources like
     A) **Geeksforgeeks**
-    B) **Leetcode**
+    B) **Leetcode** 
     C) any other
