@@ -1,4 +1,4 @@
-package dsa_for_dataengineers
+package dsa_for_dataengineers.geeksforgeeks.arrays
 
 object FindRepeating {
 
